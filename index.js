@@ -14,11 +14,12 @@ $(function () {
 		$("#urlarea").val("");
 	});
 
-	function scissors(url) {
+	function scissors(value) {
+		var url = getUrl(value);
 		var path = url.split("?")[0];
 		var query = url.split("?")[1];
 
-		$("#path").text(path);
+		$("#path").text(decodeURIComponent(path));
 		$("tbody").empty();
 
 		if (query) {
@@ -34,8 +35,17 @@ $(function () {
 
 	function getRowHtml(key, value) {
 		return "<tr>" +
-					"<td>" + key + "</td>" +
+					"<td>" + decodeURIComponent(key) + "</td>" +
 					"<td>" + decodeURIComponent(value) + "</td>" +
 				"</tr>";
+	}
+
+	function getUrl(value) {
+		if (value.substring(0, 4) === "http") {	// For URL
+			return value;
+		} else if (value.match("GET ") && value.match(" HTTP/")) {	// For AccessLog
+			return value.split("GET ")[1].split(" HTTP/")[0];
+		}
+		return "";
 	}
 });
