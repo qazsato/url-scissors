@@ -46,6 +46,6 @@ $(function () {
 		} else if (value.match("GET ") && value.match(" HTTP/")) {	// For AccessLog
 			return value.split("GET ")[1].split(" HTTP/")[0];
 		}
-		return "";
+		return value;
 	}
 });
