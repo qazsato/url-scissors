@@ -1,0 +1,78 @@
+body {
+	width: 300px;
+}
+
+textarea {
+	width: 100%;
+	margin-top: 5px;
+	resize: vertical;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table tbody tr:nth-child(odd) {
+	background-color: #ECF0F1;
+}
+
+table tbody tr:nth-child(even) {
+	background-color: white;
+}
+
+table tbody tr td {
+	width: 50%;
+	padding: 5px;
+	word-break: break-all;
+}
+
+.flex {
+	display: -webkit-box;
+}
+
+.flex .left {
+	-webkit-box-flex: 1;
+}
+
+.flex .right {
+	width: 60px;
+	display: -webkit-box;
+	-webkit-box-align: center;
+}
+
+#result {
+	display: none;
+}
+
+#scissorsBtn {
+	width: 50%;
+	padding: 5px;
+	margin: auto;
+	font-size: 13px;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #1abc9c;
+	white-space: normal;
+	text-align: center;
+}
+
+#scissorsBtn:hover {
+	background-color: #16a085;
+}
+
+#deleteBtn {
+	width: 50%;
+	padding: 5px 2px;
+	margin: auto;
+	font-size: 13px;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #E74C3C;
+	white-space: normal;
+	text-align: center;
+}
+
+#deleteBtn:hover {
+	background-color: #C0392B;
+}
