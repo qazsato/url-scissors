@@ -78,3 +78,7 @@ table tbody tr td {
 #deleteBtn:hover {
 	background-color: #C0392B;
 }
+
+#path {
+	word-break: break-all;
+}

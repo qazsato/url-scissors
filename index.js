@@ -19,7 +19,7 @@ $(function () {
 		var path = url.split("?")[0];
 		var query = url.split("?")[1];
 
-		$("#path").text(decodeURIComponent(path));
+		$("#path").text(decode(path));
 		$("tbody").empty();
 
 		if (query) {
@@ -35,8 +35,8 @@ $(function () {
 
 	function getRowHtml(key, value) {
 		return "<tr>" +
-					"<td>" + decodeURIComponent(key) + "</td>" +
-					"<td>" + decodeURIComponent(value) + "</td>" +
+					"<td>" + decode(key) + "</td>" +
+					"<td>" + decode(value) + "</td>" +
 				"</tr>";
 	}
 
@@ -47,5 +47,15 @@ $(function () {
 			return value.split("GET ")[1].split(" HTTP/")[0];
 		}
 		return value;
+	}
+
+	function decode(value) {
+		var str;
+		try {
+			str = decodeURIComponent(value);
+		} catch(e) {
+			str = value;
+		}
+		return str;
 	}
 });
