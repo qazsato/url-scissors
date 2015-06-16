@@ -2,16 +2,18 @@
 	"name": "URLScissors",
 	"version": "1.1",
 	"manifest_version": 2,
-
 	"description": "URL分解ツール",
-
 	"permissions": [
 		"tabs"
 	],
-
 	"browser_action": {
 		"default_icon": "icon.png",
 		"default_title": "URLScissors",
 		"default_popup": "index.html"
+	},
+	"icons": {
+		"16": "icon.png",
+		"48": "icon.png",
+		"128": "icon.png"
 	}
 }
