@@ -1,82 +1,38 @@
 body {
-  width: 300px;
+  width: 325px;
+  height: 607px;
+  padding: 10px 20px;
 }
 
-textarea {
-  width: 100%;
-  margin-top: 5px;
-  resize: vertical;
+.input-area .left-side {
+  display: inline-block;
+  width: calc(100% - 70px);
+  vertical-align: middle;
+}
+
+.input-area .right-side {
+  display: inline-block;
+  width: 65px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn-area {
+  text-align: center;
 }
 
 table {
   width: 100%;
-  border-collapse: collapse;
-}
-
-table tbody tr:nth-child(odd) {
-  background-color: #ECF0F1;
-}
-
-table tbody tr:nth-child(even) {
-  background-color: white;
 }
 
 table tbody tr td {
   width: 50%;
-  padding: 5px;
   word-break: break-all;
-}
-
-.flex {
-  display: -webkit-box;
-}
-
-.flex .left {
-  -webkit-box-flex: 1;
-}
-
-.flex .right {
-  width: 60px;
-  display: -webkit-box;
-  -webkit-box-align: center;
 }
 
 #result {
   display: none;
-}
-
-#scissorsBtn {
-  width: 50%;
-  padding: 5px;
-  margin: auto;
-  font-size: 13px;
-  border-radius: 5px;
-  color: #fff;
-  background-color: #1abc9c;
-  white-space: normal;
-  text-align: center;
-  cursor: pointer;
-}
-
-#scissorsBtn:hover {
-  background-color: #16a085;
-}
-
-#deleteBtn {
-  width: 50%;
-  padding: 5px 2px;
-  margin: auto;
-  font-size: 13px;
-  border-radius: 5px;
-  color: #fff;
-  background-color: #E74C3C;
-  white-space: normal;
-  text-align: center;
-  cursor: pointer;
-}
-
-#deleteBtn:hover {
-  background-color: #C0392B;
+  padding-bottom: 20px;
 }
 
 #path {

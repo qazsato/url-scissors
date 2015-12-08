@@ -3,39 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>URLScissors</title>
+  <link rel="stylesheet" href="styles/material.min.css">
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-
-  <div id="top">
-    <h3>URL / AccessLog</h3>
-    <div class="flex">
-      <div class="left">
-        <textarea id="urlarea" name="url" rows="4"></textarea>
+  <section id="top">
+    <h5>URL</h5>
+    <div class="input-area">
+      <div class="left-side">
+        <div class="mdl-textfield mdl-js-textfield">
+          <textarea id="urlarea" class="mdl-textfield__input" type="text" rows="3"></textarea>
+          <label class="mdl-textfield__label" for="urlarea">URL</label>
+        </div>
       </div>
-      <div class="right">
-        <div id="deleteBtn">×</div>
+      <div class="right-side">
+        <button id="deleteBtn" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+          <i class="material-icons">clear</i>
+        </button>
       </div>
     </div>
-    <br>
-    <div id="scissorsBtn">分解する</div>
-  </div>
+    <div class="btn-area">
+      <button id="scissorsBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">分解する</button>
+    </div>
+  </section>
 
-  <div id="result">
-    <h3>Path</h3>
-    <div id="path"></div>
-    <h3>Query</h3>
-    <table class="table">
+  <section id="result">
+    <h6>Path</h6>
+    <p id="path"></p>
+    <h6>Query</h6>
+    <table class="mdl-data-table mdl-js-data-table">
       <thead>
         <tr>
-          <th>key</th>
-          <th>value</th>
+          <th class="mdl-data-table__cell--non-numeric">key</th>
+          <th class="mdl-data-table__cell--non-numeric">value</th>
         </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
-  </div>
+  </section>
+  <script src="scripts/material.min.js"></script>
   <script src="scripts/index.js"></script>
 </body>
 </html>

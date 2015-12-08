@@ -1,6 +1,8 @@
 chrome.tabs.getSelected(null, function(tab) {
   var url = tab.url;
   document.getElementById("urlarea").value = url;
+  scissors(url);
+  document.getElementById("result").style.display = "block";
 });
 
 document.getElementById("scissorsBtn").addEventListener("click", function() {
@@ -32,10 +34,10 @@ function scissors(value) {
 }
 
 function getRowHtml(key, value) {
-  return "<tr>" +
-        "<td>" + decode(key) + "</td>" +
-        "<td>" + decode(value) + "</td>" +
-      "</tr>";
+  return '<tr>' +
+        '<td class="mdl-data-table__cell--non-numeric">' + decode(key) + '</td>' +
+        '<td class="mdl-data-table__cell--non-numeric">' + decode(value) + '</td>' +
+      '</tr>';
 }
 
 function getUrl(value) {
