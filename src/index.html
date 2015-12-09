@@ -8,17 +8,16 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-  <section id="top">
-    <h5>URL</h5>
-    <div class="input-area">
+  <section id="input-area">
+    <div class="text-area">
       <div class="left-side">
         <div id="urlbox" class="mdl-textfield mdl-js-textfield">
           <textarea id="urlarea" class="mdl-textfield__input" type="text" rows="3"></textarea>
-          <label class="mdl-textfield__label" for="urlarea">URLまたはAccessLogを入力</label>
+          <label class="mdl-textfield__label" for="urlarea">URLまたはアクセスログを入力</label>
         </div>
       </div>
       <div class="right-side">
-        <button id="delete-btn" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+        <button id="delete-btn" class="mdl-button mdl-js-button mdl-button--icon">
           <i class="material-icons">clear</i>
         </button>
       </div>
@@ -27,8 +26,7 @@
       <button id="scissors-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">分解する</button>
     </div>
   </section>
-
-  <section id="result">
+  <section id="result-area">
     <h6>Path</h6>
     <p id="path"></p>
     <h6>Query</h6>

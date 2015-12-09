@@ -1,55 +1,61 @@
 'use strict';
 
 chrome.tabs.getSelected(null, tab => {
-  let url = tab.url;
-  document.getElementById('urlarea').value = url;
-  scissors(url);
+  let str = tab.url;
+  document.getElementById('urlarea').value = str;
+  document.getElementById('urlbox').classList.add('is-dirty');
+  scissors(str);
 });
 
 document.getElementById('scissors-btn').addEventListener('click', () => {
-  scissors(document.getElementById('urlarea').value);
+  let str = document.getElementById('urlarea').value;
+  scissors(str);
 });
 
 document.getElementById('delete-btn').addEventListener('click', () => {
-  document.getElementById('urlarea').value = null;
+  document.getElementById('urlarea').value = '';
   document.getElementById('urlbox').classList.remove('is-dirty');
 });
 
 let scissors = value => {
-  let url = getUrl(value);
-  let path = url.split('?')[0];
-  let query = url.split('?')[1];
-
-  document.getElementById('path').innerText = decode(path);
-  document.getElementsByTagName('tbody')[0].innerHTML = '';
-
-  if (query) {
+  if (isUrl(value)) {
+    let url = getUrl(value);
+    let path = url.split('?')[0];
+    let query = url.split('?')[1];
     let html = '';
-    let queryArray = query.split('&');
-    for (let i = 0; i < queryArray.length; i++) {
-      let q = queryArray[i].split('=');
-      html += getRowHtml(q[0], q[1]);
+    if (query) {
+      let queryArray = query.split('&');
+      for (let i = 0; i < queryArray.length; i++) {
+        let q = queryArray[i].split('=');
+        html += getRowHtml(q[0], q[1]);
+      }
+    } else {
+      html += getRowHtml('---', '---');
     }
+    document.getElementById('path').innerText = decode(path);
     document.getElementsByTagName('tbody')[0].innerHTML = html;
-    document.getElementById('result').style.display = 'block';
+  } else {
+    document.getElementById('path').innerText = '---';
+    document.getElementsByTagName('tbody')[0].innerHTML = getRowHtml('---', '---');
   }
-}
+};
 
-let getRowHtml = (key, value) => {
-  return `<tr>
-            <td class="mdl-data-table__cell--non-numeric">${decode(key)}</td>
-            <td class="mdl-data-table__cell--non-numeric">${decode(value)}</td>
-          </tr>`;
-}
+let isUrl = value => {
+  return value.substring(0, 4) === 'http';
+};
+
+let isAccessLog = value => {
+  return (value.match('GET ') && value.match(' HTTP/'));
+};
 
 let getUrl = value => {
-  if (value.substring(0, 4) === 'http') {  // For URL
+  if (isUrl(value)) {
     return value;
-  } else if (value.match('GET ') && value.match(' HTTP/')) {  // For AccessLog
+  } else if (isAccessLog(value)) {
     return value.split('GET ')[1].split(' HTTP/')[0];
   }
   return value;
-}
+};
 
 let decode = value => {
   let str;
@@ -59,4 +65,11 @@ let decode = value => {
     str = value;
   }
   return str;
-}
+};
+
+let getRowHtml = (key, value) => {
+  return `<tr>
+            <td class="mdl-data-table__cell--non-numeric">${decode(key)}</td>
+            <td class="mdl-data-table__cell--non-numeric">${decode(value)}</td>
+          </tr>`;
+};

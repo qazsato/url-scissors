@@ -1,40 +1,72 @@
 body {
-  width: 325px;
-  height: 607px;
-  padding: 10px 20px;
+  width: 300px;
+  height: 600px;
+  padding: 10px;
 }
 
-.input-area .left-side {
+#input-area {
+  padding: 0 10px 25px 10px;
+  background-color: #f5f2f0;
+}
+
+#input-area .text-area .left-side {
   display: inline-block;
-  width: calc(100% - 70px);
+  width: calc(100% - 40px);
   vertical-align: middle;
 }
 
-.input-area .right-side {
+#input-area .text-area .left-side .mdl-textfield__input {
+  background-color: white;
+  font-size: 14px;
+}
+
+#input-area .text-area .left-side .mdl-textfield__label {
+  font-size: 14px;
+}
+
+#input-area .text-area .right-side {
   display: inline-block;
-  width: 65px;
+  width: 35px;
   vertical-align: middle;
   text-align: center;
 }
 
-.btn-area {
+#input-area .btn-area {
   text-align: center;
 }
 
-table {
+#result-area {
+  padding-bottom: 20px;
+}
+
+#result-area p {
+  margin-left: 8px;
+  word-break: break-all;
+}
+
+#result-area table {
   width: 100%;
 }
 
-table tbody tr td {
+#result-area table tbody tr td {
   width: 50%;
   word-break: break-all;
 }
 
-#result {
-  display: none;
-  padding-bottom: 20px;
+#result-area .mdl-data-table {
+  white-space: normal;
 }
 
-#path {
-  word-break: break-all;
+#result-area .mdl-data-table th {
+  height: 42px;
+  padding: 0 8px 8px 8px;
+}
+
+#result-area .mdl-data-table tbody tr {
+  height: 38px;
+}
+
+#result-area .mdl-data-table td {
+  height: 38px;
+  padding: 8px 18px 8px 8px;
 }
