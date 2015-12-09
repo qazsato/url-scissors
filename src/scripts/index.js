@@ -17,6 +17,16 @@ document.getElementById('delete-btn').addEventListener('click', () => {
   document.getElementById('urlbox').classList.remove('is-dirty');
 });
 
+document.getElementById('copy-btn').addEventListener('click', () => {
+  var textArea = document.createElement("textarea");
+  textArea.style.cssText = "position:absolute;left:-100%";
+  document.body.appendChild(textArea);
+  textArea.value = document.getElementById("query-table").innerText;
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+});
+
 let scissors = value => {
   if (isUrl(value)) {
     let url = getUrl(value);

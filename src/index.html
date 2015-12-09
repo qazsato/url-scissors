@@ -27,10 +27,12 @@
     </div>
   </section>
   <section id="result-area">
-    <h6>Path</h6>
-    <p id="path"></p>
-    <h6>Query</h6>
-    <table class="mdl-data-table mdl-js-data-table">
+    <h6 class="path-title">Path</h6>
+    <div id="path" class="path-content"></div>
+    <h6 class="query-title">Query</h6>
+    <div id="copy-btn" class="icon material-icons">content_copy</div>
+    <div class="mdl-tooltip" for="copy-btn">コピー</div>
+    <table id="query-table" class="mdl-data-table mdl-js-data-table">
       <thead>
         <tr>
           <th class="mdl-data-table__cell--non-numeric">key</th>

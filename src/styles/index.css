@@ -39,9 +39,24 @@ body {
   padding-bottom: 20px;
 }
 
-#result-area p {
+#result-area .path-content {
   margin-left: 8px;
   word-break: break-all;
+}
+
+#result-area .query-title {
+  display: inline-block;
+  width: 260px;
+}
+
+#result-area #copy-btn {
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+}
+
+#result-area #copy-btn:focus {
+  outline: none;
 }
 
 #result-area table {
