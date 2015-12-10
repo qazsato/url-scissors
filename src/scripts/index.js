@@ -28,7 +28,7 @@ document.getElementById('copy-btn').addEventListener('click', () => {
 });
 
 let scissors = value => {
-  if (isUrl(value)) {
+  if (isUrl(value) || isAccessLog(value)) {
     let url = getUrl(value);
     let path = url.split('?')[0];
     let query = url.split('?')[1];
