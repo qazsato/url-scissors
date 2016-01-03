@@ -3,7 +3,7 @@ URL分解くん
 
 URLをパスとクエリに分解しテーブル表示するChrome拡張機能です
 
-![キャプチャー](https://raw.githubusercontent.com/wiki/qaz-s/chrome-url-scissors/image.png)
+![キャプチャー](https://raw.githubusercontent.com/wiki/qazsato/chrome-url-scissors/image.png)
 
 特徴
 --
