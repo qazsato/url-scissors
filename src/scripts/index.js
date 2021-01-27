@@ -8,12 +8,13 @@ chrome.tabs.getSelected(null, tab => {
 });
 
 document.getElementById('scissors-btn').addEventListener('click', () => {
-  let str = document.getElementById('urlarea').value;
+  let str = document.getElementById('urlarea').value.trim();
   scissors(str);
 });
 
-document.getElementById('delete-btn').addEventListener('click', () => {
+document.getElementById('clear-btn').addEventListener('click', () => {
   document.getElementById('urlarea').value = '';
+  document.getElementById('urlarea').focus();
   document.getElementById('urlbox').classList.remove('is-dirty');
 });
 
@@ -28,7 +29,7 @@ document.getElementById('copy-btn').addEventListener('click', () => {
 });
 
 let scissors = value => {
-  if (isUrl(value) || isAccessLog(value)) {
+  if (isUrl(value)) {
     let url = getUrl(value);
     let path = url.split('?')[0];
     let query = url.split('?')[1];
@@ -54,15 +55,9 @@ let isUrl = value => {
   return value.substring(0, 4) === 'http';
 };
 
-let isAccessLog = value => {
-  return (value.match('GET ') && value.match(' HTTP/'));
-};
-
 let getUrl = value => {
   if (isUrl(value)) {
     return value;
-  } else if (isAccessLog(value)) {
-    return value.split('GET ')[1].split(' HTTP/')[0];
   }
   return value;
 };

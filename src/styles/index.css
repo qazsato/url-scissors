@@ -1,5 +1,5 @@
 body {
-  width: 300px;
+  width: 320px;
   height: 600px;
   padding: 10px;
 }
@@ -16,11 +16,15 @@ body {
 }
 
 #input-area .text-area .left-side .mdl-textfield__input {
+  padding: 5px;
+  box-sizing: border-box;
   background-color: white;
   font-size: 14px;
 }
 
 #input-area .text-area .left-side .mdl-textfield__label {
+  padding: 2px 8px;
+  box-sizing: border-box;
   font-size: 14px;
 }
 
@@ -46,7 +50,7 @@ body {
 
 #result-area .query-title {
   display: inline-block;
-  width: 260px;
+  width: 280px;
 }
 
 #result-area #copy-btn {
