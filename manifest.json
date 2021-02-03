@@ -1,14 +1,14 @@
 {
-  "name": "URL Scissors",
-  "version": "3.0.0",
+  "name": "URL分解くん",
+  "version": "3.1.0",
   "manifest_version": 2,
-  "description": "URL Cutting Tool",
+  "description": "URLをパスとクエリに分解します。",
   "permissions": [
     "tabs"
   ],
   "browser_action": {
     "default_icon": "images/icon.png",
-    "default_title": "URL Scissors",
+    "default_title": "URL分解くん",
     "default_popup": "index.html"
   },
   "icons": {

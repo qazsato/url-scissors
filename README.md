@@ -1,21 +1,14 @@
-URL分解くん
-==
+# URL分解くん
 
-URLをパスとクエリに分解しテーブル表示するChrome拡張機能です
+URLをパスとクエリに分解しテーブル表示するChrome拡張機能
 
 ![キャプチャー](https://raw.githubusercontent.com/wiki/qazsato/chrome-url-scissors/image.png)
 
-特徴
---
-- URLのクエリはデコード(UTF-8)して表示します
-- URLだけでなくアクセスログも分解可能です
-- Queryのコピーボタンで簡単にクリップボードにコピーできます(TSV形式)
+## インストール
 
-追加手順
---
-1. Download ZIPからコードをDL
-2. srcフォルダを任意のローカルディレクトリにコピー
-2. Chromeブラウザのハンバーガーアイコン→[設定]→[Chrome拡張]を選択
-3. [デベロッパーモード]にチェックをつける
-4. [パッケージ化されていない拡張機能を読み込む]を選択し、srcフォルダを追加
-5. 拡張機能一覧に「URL分解くん」が表示されたらOK
+https://chrome.google.com/webstore/detail/url-scissors/mkopfehjejlpfipkcglkaheajjcjjnhp?hl=ja&authuser=0
+
+## 特徴
+
+- URLのクエリはデコード(UTF-8)して表示
+- Queryのコピーボタンで簡単にクリップボードにコピーできます(TSV形式)
